@@ -60,6 +60,7 @@
   },
   "devDependencies": {
     "@types/react-modal": "^3.12.1",
-    "gh-pages": "^3.2.3"
-  }
+    "gh-pages": "^2.0.1"
+  },
+  "homepage": "https://UNNEW-main.github.io/jolp-exhibition-jackdaniel"
 }
