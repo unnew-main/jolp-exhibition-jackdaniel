@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/jolp-exhibition-jackdaniel/static/css/main.1303a2cf.chunk.css",
-    "main.js": "/jolp-exhibition-jackdaniel/static/js/main.27f5e625.chunk.js",
-    "main.js.map": "/jolp-exhibition-jackdaniel/static/js/main.27f5e625.chunk.js.map",
-    "runtime-main.js": "/jolp-exhibition-jackdaniel/static/js/runtime-main.b3cb0bad.js",
-    "runtime-main.js.map": "/jolp-exhibition-jackdaniel/static/js/runtime-main.b3cb0bad.js.map",
-    "static/js/2.f9e92613.chunk.js": "/jolp-exhibition-jackdaniel/static/js/2.f9e92613.chunk.js",
-    "static/js/2.f9e92613.chunk.js.map": "/jolp-exhibition-jackdaniel/static/js/2.f9e92613.chunk.js.map",
-    "static/js/3.f301d305.chunk.js": "/jolp-exhibition-jackdaniel/static/js/3.f301d305.chunk.js",
-    "static/js/3.f301d305.chunk.js.map": "/jolp-exhibition-jackdaniel/static/js/3.f301d305.chunk.js.map",
+    "main.js": "/jolp-exhibition-jackdaniel/static/js/main.d405338f.chunk.js",
+    "main.js.map": "/jolp-exhibition-jackdaniel/static/js/main.d405338f.chunk.js.map",
+    "runtime-main.js": "/jolp-exhibition-jackdaniel/static/js/runtime-main.cc1f982a.js",
+    "runtime-main.js.map": "/jolp-exhibition-jackdaniel/static/js/runtime-main.cc1f982a.js.map",
+    "static/js/2.4656eb06.chunk.js": "/jolp-exhibition-jackdaniel/static/js/2.4656eb06.chunk.js",
+    "static/js/2.4656eb06.chunk.js.map": "/jolp-exhibition-jackdaniel/static/js/2.4656eb06.chunk.js.map",
+    "static/js/3.5a51620c.chunk.js": "/jolp-exhibition-jackdaniel/static/js/3.5a51620c.chunk.js",
+    "static/js/3.5a51620c.chunk.js.map": "/jolp-exhibition-jackdaniel/static/js/3.5a51620c.chunk.js.map",
     "index.html": "/jolp-exhibition-jackdaniel/index.html",
     "static/css/main.1303a2cf.chunk.css.map": "/jolp-exhibition-jackdaniel/static/css/main.1303a2cf.chunk.css.map",
-    "static/js/2.f9e92613.chunk.js.LICENSE.txt": "/jolp-exhibition-jackdaniel/static/js/2.f9e92613.chunk.js.LICENSE.txt",
+    "static/js/2.4656eb06.chunk.js.LICENSE.txt": "/jolp-exhibition-jackdaniel/static/js/2.4656eb06.chunk.js.LICENSE.txt",
     "static/media/index.css": "/jolp-exhibition-jackdaniel/static/media/RIDIBatang.80d8670c.otf"
   },
   "entrypoints": [
-    "static/js/runtime-main.b3cb0bad.js",
-    "static/js/2.f9e92613.chunk.js",
+    "static/js/runtime-main.cc1f982a.js",
+    "static/js/2.4656eb06.chunk.js",
     "static/css/main.1303a2cf.chunk.css",
-    "static/js/main.27f5e625.chunk.js"
+    "static/js/main.d405338f.chunk.js"
   ]
 }
