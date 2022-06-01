@@ -4,15 +4,16 @@ import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
 import { ArrowNext } from './components';
 import { FaArrowRight } from 'react-icons/fa';
-type Props = { handlePage: () => void };
-export const Page5: React.FC<Props> = ({ handlePage }) => {
+import { useHistory } from 'react-router-dom';
+import { pagesRoutes } from 'routes/pagesRoutes';
+import { timeout } from 'utils/timeout';
+
+export const Page5: React.FC = () => {
   const [curState, setCurState] = useState(0);
   const [nextButton, setNextButton] = useState(0);
   const [eventState, setEventState] = useState(0);
   const [eventLock, setEventLock] = useState(0);
-  function timeout(delay: number) {
-    return new Promise((res) => setTimeout(res, delay));
-  }
+  const history = useHistory();
 
   useEffect(() => {
     const wait2 = async () => {
@@ -27,7 +28,7 @@ export const Page5: React.FC<Props> = ({ handlePage }) => {
     setCurState(1);
     setNextButton(0);
     await timeout(1000);
-    handlePage();
+    history.push(pagesRoutes[5].pathName);
   };
   const EventHandle = () => {
     if (eventLock === 0) {

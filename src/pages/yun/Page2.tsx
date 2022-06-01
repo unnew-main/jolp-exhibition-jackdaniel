@@ -4,14 +4,14 @@ import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
 import { ArrowNext } from './components';
 import { NumberPlus } from './components';
-type Props = { handlePage: () => void };
-export const Page2: React.FC<Props> = ({ handlePage }) => {
+import { useHistory } from 'react-router-dom';
+import { pagesRoutes } from 'routes/pagesRoutes';
+import { timeout } from 'utils/timeout';
+export const Page2: React.FC = () => {
   const [curState, setCurState] = useState(0);
   const [nextButton, setNextButton] = useState(0);
+  const history = useHistory();
 
-  function timeout(delay: number) {
-    return new Promise((res) => setTimeout(res, delay));
-  }
   const NextPage = () => {
     setNextButton(0);
     setCurState((curState) => curState + 1);
@@ -30,12 +30,12 @@ export const Page2: React.FC<Props> = ({ handlePage }) => {
     const wait = async () => {
       if (curState === 2) {
         await timeout(1000);
-        handlePage();
+        history.push(pagesRoutes[2].pathName);
       }
     };
 
     wait();
-  }, [curState, handlePage]);
+  }, [curState, history]);
 
   return (
     <LayoutContainer>

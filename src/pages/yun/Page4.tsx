@@ -5,6 +5,9 @@ import styled from '@emotion/styled';
 import { ArrowNext } from './components';
 import { Doughnut } from 'react-chartjs-2';
 import { NumberPlus } from './components';
+import { useHistory } from 'react-router-dom';
+import { pagesRoutes } from 'routes/pagesRoutes';
+import { timeout } from 'utils/timeout';
 const options: object = {
   plugins: {
     legend: {
@@ -15,11 +18,12 @@ const options: object = {
   maintainAspectRatio: false, // false로 설정 시 사용자 정의 크기에 따라 그래프 크기가 결정됨.
 };
 
-type Props = { handlePage: () => void };
-export const Page4: React.FC<Props> = ({ handlePage }) => {
+export const Page4: React.FC = () => {
   const [curState, setCurState] = useState(0);
   const [nextButton, setNextButton] = useState(0);
   const ChartColor = ['#E05D5D', ' #FFB344'];
+  const history = useHistory();
+
   const data = {
     labels: ['맥아, 밀, 기타등등', '옥수수'],
     datasets: [
@@ -34,10 +38,6 @@ export const Page4: React.FC<Props> = ({ handlePage }) => {
     ],
   };
 
-  function timeout(delay: number) {
-    return new Promise((res) => setTimeout(res, delay));
-  }
-
   useEffect(() => {
     const wait2 = async () => {
       await timeout(4500);
@@ -51,7 +51,7 @@ export const Page4: React.FC<Props> = ({ handlePage }) => {
     setCurState(1);
     setNextButton(0);
     await timeout(1000);
-    handlePage();
+    history.push(pagesRoutes[4].pathName);
   };
 
   return (

@@ -3,11 +3,15 @@ import { LayoutContainer } from './components/index';
 import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
 import { ArrowNext } from './components';
+import { timeout } from 'utils/timeout';
+import { useHistory } from 'react-router-dom';
+import { pagesRoutes } from 'routes/pagesRoutes';
 
-type Props = { handlePage: () => void };
-export const Page6: React.FC<Props> = ({ handlePage }) => {
+export const Page6: React.FC = () => {
   const [curState, setCurState] = useState(0);
   const [nextButton, setNextButton] = useState(0);
+  const history = useHistory();
+
   const title = [
     { text: '기', dTime: 1.5 },
     { text: '본', dTime: 1.6 },
@@ -18,9 +22,6 @@ export const Page6: React.FC<Props> = ({ handlePage }) => {
     { text: '르', dTime: 2.1 },
     { text: '다', dTime: 2.2 },
   ];
-  function timeout(delay: number) {
-    return new Promise((res) => setTimeout(res, delay));
-  }
 
   useEffect(() => {
     const wait2 = async () => {
@@ -35,7 +36,7 @@ export const Page6: React.FC<Props> = ({ handlePage }) => {
     setCurState(1);
     setNextButton(0);
     await timeout(1000);
-    handlePage();
+    history.push(pagesRoutes[6].pathName);
   };
 
   return (

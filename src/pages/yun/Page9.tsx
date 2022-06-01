@@ -4,16 +4,15 @@ import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
 import { BsCircleFill } from 'react-icons/bs';
 import { ImExit } from 'react-icons/im';
+import { timeout } from 'utils/timeout';
+import { useHistory } from 'react-router-dom';
+import { pagesRoutes } from 'routes/pagesRoutes';
 
-type Props = { handlePage: () => void };
-
-export const Page9: React.FC<Props> = ({ handlePage }) => {
+export const Page9: React.FC = () => {
   const [curState, setCurState] = useState(0);
   const [handleSection, setHandleSection] = useState(0);
   const [PageLock, setPageLock] = useState(0);
-  function timeout(delay: number) {
-    return new Promise((res) => setTimeout(res, delay));
-  }
+  const history = useHistory();
 
   const NextPage = async () => {
     if (curState === 0) {
@@ -26,7 +25,7 @@ export const Page9: React.FC<Props> = ({ handlePage }) => {
       await timeout(200);
       setCurState(3);
       await timeout(1000);
-      handlePage();
+      history.push(pagesRoutes[0].pathName);
     }
   };
   const NextPageHandle = () => {

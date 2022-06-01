@@ -3,17 +3,17 @@ import { LayoutContainer } from './components/index';
 import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
 import { ArrowNext } from './components';
+import { useHistory } from 'react-router-dom';
+import { pagesRoutes } from 'routes/pagesRoutes';
+import { timeout } from 'utils/timeout';
 
-type Props = { handlePage: () => void };
-export const Page3: React.FC<Props> = ({ handlePage }) => {
+export const Page3: React.FC = () => {
   const [curState, setCurState] = useState(0);
   const [nextButton, setNextButton] = useState(0);
   const [quizA, setQuizA] = useState(0);
   const [quizB, setQuizB] = useState(0);
 
-  function timeout(delay: number) {
-    return new Promise((res) => setTimeout(res, delay));
-  }
+  const history = useHistory();
 
   useEffect(() => {
     const wait2 = async () => {
@@ -28,7 +28,7 @@ export const Page3: React.FC<Props> = ({ handlePage }) => {
     setCurState(1);
     setNextButton(0);
     await timeout(1000);
-    handlePage();
+    history.push(pagesRoutes[3].pathName);
   };
 
   return (

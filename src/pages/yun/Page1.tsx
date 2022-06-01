@@ -2,22 +2,21 @@ import React, { useState } from 'react';
 import { LayoutContainer } from './components/index';
 import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
+import { useHistory } from 'react-router-dom';
+import { pagesRoutes } from 'routes/pagesRoutes';
+import { timeout } from 'utils/timeout';
 
-type Props = { handlePage: () => void };
-export const Page1: React.FC<Props> = ({ handlePage }) => {
+export const Page1: React.FC = () => {
   const [PageLock, setPageLock] = useState(0);
   const [curState, setCurState] = useState(0);
-
-  function timeout(delay: number) {
-    return new Promise((res) => setTimeout(res, delay));
-  }
+  const history = useHistory();
 
   const NextPage = async () => {
     if (PageLock === 0) {
       setPageLock(1);
       setCurState(1);
       await timeout(1000);
-      handlePage();
+      history.push(pagesRoutes[1].pathName);
     }
   };
   return (

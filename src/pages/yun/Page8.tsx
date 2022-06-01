@@ -4,10 +4,13 @@ import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
 import { ArrowNext } from './components';
 import { LineAction } from './components/page8';
-type Props = { handlePage: () => void };
-export const Page8: React.FC<Props> = ({ handlePage }) => {
+import { timeout } from 'utils/timeout';
+import { useHistory } from 'react-router-dom';
+import { pagesRoutes } from 'routes/pagesRoutes';
+export const Page8: React.FC = () => {
   const [curState, setCurState] = useState(0);
   const [nextButton, setNextButton] = useState(0);
+  const history = useHistory();
 
   const LinePosition = [
     { sTop: '-80px', sLeft: '280px', dTop: '280px', dLeft: '-80px', Rotate: '-45deg', boxTop: '100%', boxLeft: '0%' },
@@ -18,10 +21,6 @@ export const Page8: React.FC<Props> = ({ handlePage }) => {
     { sTop: '100px', sLeft: '-110px', dTop: '100px', dLeft: '310px', Rotate: '0deg', boxTop: '50%', boxLeft: '115%' },
     { sTop: '-80px', sLeft: '-80px', dTop: '280px', dLeft: '280px', Rotate: '45deg', boxTop: '100%', boxLeft: '100%' },
   ];
-
-  function timeout(delay: number) {
-    return new Promise((res) => setTimeout(res, delay));
-  }
 
   useEffect(() => {
     const wait2 = async () => {
@@ -36,7 +35,7 @@ export const Page8: React.FC<Props> = ({ handlePage }) => {
     setCurState(1);
     setNextButton(0);
     await timeout(1000);
-    handlePage();
+    history.push(pagesRoutes[8].pathName);
   };
 
   return (

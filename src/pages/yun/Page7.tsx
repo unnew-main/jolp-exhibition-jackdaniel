@@ -4,10 +4,14 @@ import { motion } from 'framer-motion';
 import styled from '@emotion/styled';
 import { ArrowNext } from './components';
 import { ShowImg } from './components/page7';
-type Props = { handlePage: () => void };
-export const Page7: React.FC<Props> = ({ handlePage }) => {
+import { timeout } from 'utils/timeout';
+import { useHistory } from 'react-router-dom';
+import { pagesRoutes } from 'routes/pagesRoutes';
+export const Page7: React.FC = () => {
   const [curState, setCurState] = useState(0);
   const [nextButton, setNextButton] = useState(0);
+  const history = useHistory();
+
   const imgData = [
     { name: 1, imgX: 45, imgY: 0, imgW: 10, imgH: 30, dTime: 0.1 },
     { name: 2, imgX: 28, imgY: 0, imgW: 17, imgH: 18, dTime: 0.2 },
@@ -25,9 +29,6 @@ export const Page7: React.FC<Props> = ({ handlePage }) => {
     { name: 14, imgX: 15, imgY: 69, imgW: 14, imgH: 37, dTime: 1.4 },
     { name: 15, imgX: 29, imgY: 80, imgW: 17, imgH: 20, dTime: 1.5 },
   ];
-  function timeout(delay: number) {
-    return new Promise((res) => setTimeout(res, delay));
-  }
 
   useEffect(() => {
     const wait2 = async () => {
@@ -42,7 +43,7 @@ export const Page7: React.FC<Props> = ({ handlePage }) => {
     setCurState(1);
     setNextButton(0);
     await timeout(1000);
-    handlePage();
+    history.push(pagesRoutes[7].pathName);
   };
 
   return (
